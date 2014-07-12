@@ -196,7 +196,8 @@ namespace nodetool
   {
     if (!testnet) {
       //TODO add seed for your network
-      //ADD_HARDCODED_SEED_NODE("your_seed_ip.com:8080");
+      //ADD_HARDCODED_SEED_NODE("218.145.160.136:8080");
+      //ADD_HARDCODED_SEED_NODE("61.175.209.125:6969");
     } else {
       m_network_id.data[0] += 1;
     }
