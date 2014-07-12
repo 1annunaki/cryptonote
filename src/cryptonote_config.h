@@ -9,9 +9,9 @@
 #define CRYPTONOTE_MAX_TX_SIZE                          1000000000
 #define CRYPTONOTE_PUBLIC_ADDRESS_TEXTBLOB_VER          0
 //TODO Currency-specific address prefix
-#define CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX        
+#define CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX         33 // addresses start with "5" 
 //TODO Choose maturity period for your currency
-#define CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW            
+#define CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW            60
 #define CURRENT_TRANSACTION_VERSION                     1
 #define CURRENT_BLOCK_MAJOR_VERSION                     1
 #define CURRENT_BLOCK_MINOR_VERSION                     0
@@ -22,22 +22,22 @@
 //TODO Specify total number of available coins
 //TODO ((uint64_t)(-1)) equals to 18446744073709551616 coins
 //TODO or you can define number explicitly UINT64_C(858986905600000000)
-#define MONEY_SUPPLY                                   
-#define EMISSION_SPEED_FACTOR                           (18)
+#define MONEY_SUPPLY                                    ((uint64_t)(-1))
+#define EMISSION_SPEED_FACTOR                           (23)
 
 //TODO Define number of blocks for block size median calculation
 #define CRYPTONOTE_REWARD_BLOCKS_WINDOW                 100
-#define CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE       10000 //size of block (bytes) after which reward for block calculated using block size
+#define CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE       20000 //size of block (bytes) after which reward for block calculated using block size
 #define CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE          600
 //TODO Define number of digits
-#define CRYPTONOTE_DISPLAY_DECIMAL_POINT                
+#define CRYPTONOTE_DISPLAY_DECIMAL_POINT                12
 //TODO Define number of smallest units in one coin
-#define COIN                                            
+#define COIN                                            ((uint64_t)1000000000000) // pow(10, 12)
 //TODO Define default fee for transactions
-#define DEFAULT_FEE                                     
+#define DEFAULT_FEE                                     ((uint64_t)   5000000000) // 5 * pow(10, 9)
 
 //TODO Define preferred block's target time
-#define DIFFICULTY_TARGET                               120 // seconds
+#define DIFFICULTY_TARGET                               60 // seconds
 //TODO There are options to tune CryptoNote's difficulty retargeting function. 
 //TODO We recommend not to change it.
 #define DIFFICULTY_WINDOW                               720 // blocks
@@ -80,7 +80,7 @@
 #define ALLOW_DEBUG_COMMANDS
 
 //TODO Put here the name of your currency
-#define CRYPTONOTE_NAME                         "sailor coin"
+#define CRYPTONOTE_NAME                         "sailorcoin"
 #define CRYPTONOTE_BLOCKS_FILENAME              "blocks.dat"
 #define CRYPTONOTE_BLOCKINDEXES_FILENAME        "blockindexes.dat"
 #define CRYPTONOTE_BLOCKSCACHE_FILENAME         "blockscache.dat"
